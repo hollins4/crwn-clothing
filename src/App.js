@@ -1,15 +1,11 @@
 import React from 'react';
-import { Switch, Route, BrowserRouter as Router, Link } from 'react-router-dom';
+import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
 
 import './App.css';
 
 import HomePage from './pages/homepage/homepage';
-
-const HatsPage = () => (
-  <div>
-    <h1>HATS PAGE</h1>
-  </div>
-)
+import ShopPage from './pages/shop/shop.jsx';
+import Header from './components/header/header'
 
 
 
@@ -17,13 +13,10 @@ function App() {
   return (
     <div className="App">
     <Router>
-      <ul>
-        <li><Link to='/'>Home</Link></li>
-
-      </ul>
+      <Header />
       <Switch>
         <Route exact path='/' component={HomePage} />
-        <Route path='/shop/hats' component={HatsPage} />
+        <Route path='/shop' component={ShopPage} />
       </Switch>
     </Router>
     </div>
