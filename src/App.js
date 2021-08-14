@@ -3,7 +3,8 @@ import { Switch, Route, BrowserRouter as Router, Redirect } from 'react-router-d
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
-import './App.css';
+//import './App.css';
+import { GlobalStyle } from './global.styles';
 
 import HomePage from './pages/homepage/homepage';
 import ShopPage from './pages/shop/shop.jsx';
@@ -51,6 +52,7 @@ class App extends React.Component {
     return (
       <div className="App">
       <Router>
+        <GlobalStyle />
         <Header />
         <Switch>
           <Route exact path='/' component={HomePage} />
